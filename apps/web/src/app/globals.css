@@ -6,7 +6,91 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #8ab3d1;
+  background-color: #f1ccc7;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+.text-wrapper {
+  display: inline-block;
+}
+
+.extrude-letter {
+  display: inline-block;
+  position: relative;
+  color: #f6aca2;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Center (hovered) letter - maximum extrusion */
+.extrude-letter:hover {
+  transform: translate(10px, -10px);
+  text-shadow: 2px -2px 0 #f6aca2, 4px -4px 0 #f28b7d, 6px -6px 0 #f07a6a, 8px -8px 0 #e85b4e, 10px -10px 0 #e54a3d;
+  z-index: 2;
+}
+
+/* First letter after/before hovered - strong extrusion */
+.extrude-letter:hover + .extrude-letter,
+.extrude-letter + .extrude-letter:hover ~ .extrude-letter:first-of-type {
+  transform: translate(8px, -8px);
+  text-shadow: 1.6px -1.6px 0 #f6aca2, 3.2px -3.2px 0 #f28b7d, 4.8px -4.8px 0 #f07a6a, 6.4px -6.4px 0 #e85b4e, 8px -8px
+    0 #e54a3d;
+  z-index: 1;
+}
+
+/* Second letter after/before hovered - medium extrusion */
+.extrude-letter:hover + .extrude-letter + .extrude-letter,
+.extrude-letter + .extrude-letter + .extrude-letter:hover ~ .extrude-letter:first-of-type {
+  transform: translate(6px, -6px);
+  text-shadow: 1.2px -1.2px 0 #f6aca2, 2.4px -2.4px 0 #f28b7d, 3.6px -3.6px 0 #f07a6a, 4.8px -4.8px 0 #e85b4e, 6px -6px
+    0 #e54a3d;
+}
+
+/* Third letter after/before hovered - light extrusion */
+.extrude-letter:hover + .extrude-letter + .extrude-letter + .extrude-letter,
+.extrude-letter + .extrude-letter + .extrude-letter + .extrude-letter:hover ~ .extrude-letter:first-of-type {
+  transform: translate(4px, -4px);
+  text-shadow: 0.8px -0.8px 0 #f6aca2, 1.6px -1.6px 0 #f28b7d, 2.4px -2.4px 0 #f07a6a, 3.2px -3.2px 0 #e85b4e, 4px -4px
+    0 #e54a3d;
+}
+
+/* Fourth and beyond letters after/before hovered - minimal extrusion */
+.extrude-letter:hover ~ .extrude-letter,
+.extrude-letter:hover ~ .extrude-letter:first-of-type {
+  transform: translate(2px, -2px);
+  text-shadow: 0.4px -0.4px 0 #f6aca2, 0.8px -0.8px 0 #f28b7d, 1.2px -1.2px 0 #f07a6a, 1.6px -1.6px 0 #e85b4e, 2px -2px
+    0 #e54a3d;
+}
+
+/* JavaScript-powered approach for more precise control */
+.extrude-letter[data-distance="0"] {
+  transform: translate(10px, -10px) !important;
+  text-shadow: 2px -2px 0 #f6aca2, 4px -4px 0 #f28b7d, 6px -6px 0 #f07a6a, 8px -8px 0 #e85b4e, 10px -10px 0 #e54a3d !important;
+  z-index: 2;
+}
+
+.extrude-letter[data-distance="1"] {
+  transform: translate(8px, -8px) !important;
+  text-shadow: 1.6px -1.6px 0 #f6aca2, 3.2px -3.2px 0 #f28b7d, 4.8px -4.8px 0 #f07a6a, 6.4px -6.4px 0 #e85b4e, 8px -8px
+    0 #e54a3d !important;
+  z-index: 1;
+}
+
+.extrude-letter[data-distance="2"] {
+  transform: translate(6px, -6px) !important;
+  text-shadow: 1.2px -1.2px 0 #f6aca2, 2.4px -2.4px 0 #f28b7d, 3.6px -3.6px 0 #f07a6a, 4.8px -4.8px 0 #e85b4e, 6px -6px
+    0 #e54a3d !important;
+}
+
+.extrude-letter[data-distance="3"] {
+  transform: translate(4px, -4px) !important;
+  text-shadow: 0.8px -0.8px 0 #f6aca2, 1.6px -1.6px 0 #f28b7d, 2.4px -2.4px 0 #f07a6a, 3.2px -3.2px 0 #e85b4e, 4px -4px
+    0 #e54a3d !important;
+}
+
+.extrude-letter[data-distance="4"] {
+  transform: translate(2px, -2px) !important;
+  text-shadow: 0.4px -0.4px 0 #f6aca2, 0.8px -0.8px 0 #f28b7d, 1.2px -1.2px 0 #f07a6a, 1.6px -1.6px 0 #e85b4e, 2px -2px
+    0 #e54a3d !important;
+}
+

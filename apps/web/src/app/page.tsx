@@ -1,5 +1,5 @@
 
-import { Container, ButtonHover } from "@mono/ui";
+import { Container, TextExtrudeEffect } from "@mono/ui";
 import { Card } from "src/components/card";
 
 export const revalidate = 60;
@@ -7,7 +7,7 @@ export const revalidate = 60;
 export default async function HomePage() {
   return (
     <Container className="h-screen flex gap-10">
-      <Card
+      {/* <Card
         title={"Palette"}
         description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit."}
       />      
@@ -16,7 +16,8 @@ export default async function HomePage() {
         title={"Gear"}
         description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit."}
       />
-      <ButtonHover />
+      <ButtonHover /> */}
+      <TextExtrudeEffect text={"AMKLSDASDL"} />
     </Container>
   );
 }
