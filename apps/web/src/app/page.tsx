@@ -1,5 +1,5 @@
 
-import { Container, Typography } from "@mono/ui";
+import { Container, ButtonHover } from "@mono/ui";
 import { Card } from "src/components/card";
 
 export const revalidate = 60;
@@ -16,6 +16,7 @@ export default async function HomePage() {
         title={"Gear"}
         description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit."}
       />
+      <ButtonHover />
     </Container>
   );
 }
