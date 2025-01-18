@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -e ../../.env.local -- next dev --turbo",
+    "dev": "dotenv -e ../../.env.local -- next dev --turbo --port 3001",
     "build": "dotenv -e ../../.env.local -- next build",
     "start": "dotenv -e ../../.env.local -- next start",
     "lint": "next lint",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mono/ui": "workspace:*",
+    "@phosphor-icons/react": "^2.1.7",
     "@sanity/preview-url-secret": "^1.6.20",
     "@sanity/react-loader": "^1.10.6",
     "dotenv": "^16.4.5",

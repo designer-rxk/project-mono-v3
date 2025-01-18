@@ -6,6 +6,6 @@ const homePage = {
 
 export const homePageQuery = q(
   `*[_type == "homePage" && !(_id in path("drafts.**"))][0]`,
-).grab$(homePage);
+).grab$(homePage).nullable();
 
 export type Homepage = TypeFromSelection<typeof homePage>;

@@ -1,27 +1,21 @@
-import { runQuery } from "@lib/sanity";
-import { ButtonHover, Container, Typography } from "@mono/ui";
-import { type Homepage, homePageQuery } from "@utils";
-import { notFound } from "next/navigation";
+
+import { Container, Typography } from "@mono/ui";
+import { Card } from "src/components/card";
 
 export const revalidate = 60;
 
-async function getData() {
-  return (await runQuery(homePageQuery)) as Homepage;
-}
-
 export default async function HomePage() {
-  const page = await getData();
-
-  if (!page) {
-    notFound();
-  }
-
   return (
-    <Container>
-      <Typography as="h1" className="w-full justify-center flex items-center">
-        Sanity Text: {page.title}
-      </Typography>
-      <ButtonHover />
+    <Container className="h-screen flex gap-10">
+      <Card
+        title={"Palette"}
+        description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit."}
+      />      
+      <Card
+        variant="gear"
+        title={"Gear"}
+        description={"Lorem ipsum dolor, sit amet consectetur adipisicing elit."}
+      />
     </Container>
   );
 }
